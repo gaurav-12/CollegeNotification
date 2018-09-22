@@ -22,7 +22,7 @@ Step 4: Students will be able to read all the notifications on his/her dashboard
 2.  Staff Account Signup: Staff can login on this page with their employee id and after that staff can add notes, take submission, give       experiments dates and change password.
 3.  Admin Edit/Delete: Admin can edit or delete the records of staff and students.
 
-## SCOPE
+## Scope
 1.  This system is useful for accessing notice on android device.
 2.  It informs students about the activities and various events related to their college.
 3.  Student does not meet to visit the notice board every time.
@@ -30,7 +30,7 @@ Step 4: Students will be able to read all the notifications on his/her dashboard
 
 
 
-## TOOLS
+## Tools
 1. Android Studio
 2. Adobe Photoshop CS6
 
@@ -40,7 +40,7 @@ Step 4: Students will be able to read all the notifications on his/her dashboard
 2. GitHub
 3. Firebase
 
-## REFERENCES
+## References
 1. GitHub.  https://github.com/
 2. Android Developers. https://developer.android.com/
 

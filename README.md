@@ -33,7 +33,7 @@ Step 4: Students will be able to read all the notifications on his/her dashboard
 ## TOOLS
 1. Android Studio
 2. Adobe Photoshop CS6
-3.
+
 
 ## Technology
 1. Android Support Repository

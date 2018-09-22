@@ -31,6 +31,8 @@ Step 3: Faculties can add, delete and update information about students and staf
 
 Step 4: Notice will be sent by the Teachers after that students can immediately get that notices through the CNS.
 
+![create window](https://user-images.githubusercontent.com/32032491/45918950-22111f80-beac-11e8-8165-dfd5f615dcdd.png)
+
 Step 5: Students will be able to read all the notifications on his/her dashboard.
 
 

@@ -28,9 +28,22 @@ Step 4: Students will be able to read all the notifications on his/her dashboard
 3.  Student does not meet to visit the notice board every time.
 4.  This system is also used in hospital and banking sector.
 
+
+
+## TOOLS
+1. Android Studio
+2. Adobe Photoshop CS6
+3.
+
+## Technology
+1. Android Support Repository
+2. GitHub
+3. Firebase
+
 ## REFERENCES
 1. GitHub.  https://github.com/
 2. Android Developers. https://developer.android.com/
+
 
 
 

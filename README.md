@@ -1,21 +1,27 @@
-# CollegeNotification
-College Notification System
+# College Notification System (CNS)
 
-# Introduction
-College Notification is an android application can be used by Students and Teachers of university or college. First of all students and teachers need to register with their enrollment id and employee id respectively. This application allows teachers to upload the notice which is sent to chosen students as per filtered fields. Students can view the notice in their dashboard. This app also allow students to comment on a particular notice where teacher can reply to their comment. 
-# Abstract
-Our aim to replace the traditional notice
-board with E-notice board. Now no need to maintain
-numbers of account for sharing information, exchange of
-notes and all college related news, now it will be accessible
-anywhere anytime just on a single click on your android
-device. Just install “E-Notice Board App” on your android
-device and you can access all notices of your college. We
-have developing for staff add notes, experiments dates,
-submission and for students upload and download
-tutorials, experiments, question paper and notes in an easy
-and efficient manner. This project includes major activity
-entities: add notices, add staff record, and add student
-record which is handled by Admin. The Admin can add,
-delete, and update them simultaneously on the online
-system. These can then be viewed by the students.
+## Introduction
+College Notification is an android application can be used by Students and Teachers of university or college. First of all teachers need to sign up or sign in with their employee id. This application allows teachers to create and upload notices which will be displayed to students on their dashboard. Students may filter notices as per some fields such as department, examination, events, etc. 
+
+## Abstract
+Our aim to replace the traditional notice board with CNS which is an E-Notice Board. Now no need to maintain numbers of account for sharing information. Exchange of notices and all college related news will now be accessible anywhere anytime just on a single click on your android device. Just install “CNS” on your android device and you can access all notices of your college. We have developing for staff add notes, experiments dates, submission. This project includes major activity entities: add notices, circulate them in specific departments, and add faculty record which is handled by Admin. The Admin can add, delete, and update them simultaneously on the online system. These can then be viewed by the students.
+
+## Prerequisites
+1.  Android SDK 27
+2.  Android Build Tools v27.0.3
+3.  Android Support Repository
+
+## Steps
+Step 1: Faculties can sign up or sign in by entering their credential like employee id. 
+Step 2: Faculties can add, delete and update information about students and staff.
+Step 3: Notice will be sent by the Teachers after that students can immediately get that notices through the CNS.
+Step 4: Students will be able to read all the notifications on his/her dashboard.
+
+## Modules 
+1.  Admin Account Signup: Admin can login on this page and after that he can register staff data.
+2.  Staff Account Signup: Staff can login on this page with their employee id and after that staff can add notes, take submission, give       experiments dates and change password.
+3.  Admin Edit/Delete: Admin can edit or delete the records of staff and students.
+
+
+
+ 

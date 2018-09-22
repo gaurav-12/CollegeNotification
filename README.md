@@ -22,6 +22,10 @@ Step 4: Students will be able to read all the notifications on his/her dashboard
 2.  Staff Account Signup: Staff can login on this page with their employee id and after that staff can add notes, take submission, give       experiments dates and change password.
 3.  Admin Edit/Delete: Admin can edit or delete the records of staff and students.
 
+## REFERENCES
+1. GitHub.  https://github.com/
+2. Android Developers. https://developer.android.com/
+
 
 
  

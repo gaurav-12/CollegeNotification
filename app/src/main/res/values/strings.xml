@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">CollegeNotification</string>
+    <string name="app_name">College Notification</string>
+    <string name="app_name_short">CNS</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="or_signup_text">Dont\'t have an account already?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="emp_id">Employee Id.</string>
+    <string name="password">Password</string>
+    <string name="play_services_error">Seems like your device is not supported for Google Play Services</string>
+    <string name="play_services_cancelled">Google Play Service must be Installed or Enabled</string>
+    <string name="network_error">Please turn on your Mobile Data or connect to a WiFi network</string>
+    <string name="wrong_Input">Error Signing In, try rechecking password</string>
+    <string name="sign_in_error">An error occurred while Signing In, please try later to resolve</string>
+    <string name="empty_fields">Please fill the field(s)</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="sign_up_error">An error occurred while creating account. Please retry later to resolve.</string>
+    <string name="invalid_fields">Please fill in the fields correctly</string>
+    <string name="or_signin_text">Have an account already?</string>
+    <string name="password_rules">
+        - Lowercase character (a-z)\n
+        - Uppercase character (A-Z)\n
+        - Digit (0-9)\n
+        - Special character (!@#$&amp;^+=\-*,._?)
+    </string>
+    <string name="welcome">Welcome to CNS</string>
 </resources>

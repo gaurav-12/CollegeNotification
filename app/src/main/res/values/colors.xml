@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#03a9f4</color>
+    <color name="colorPrimaryDark">#0288d1</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="colorAccentDark">#f50057</color>
+
+    <color name="textInputLayout_normal">#bdbdbd</color>
+
+    <color name="gray_bg">#f3f3f3</color>
+    <color name="onlock_overlay">#a9f3f3f3</color>
+    <color name="white">#ffffff</color>
+    <color name="offwhite">#a5ffffff</color>
+
+    <color name="button_unlocked_bg">#00e676</color>
+    <color name="button_locked_bg">#00c853</color>
+    <color name="button_locked_disabled_bg">#818181</color>
+
+    <color name="title_bg_gray">#14000000</color>
+    <color name="title_text">#c3000000</color>
+    <color name="edittext_hint">#b7b7b7</color>
+
 </resources>

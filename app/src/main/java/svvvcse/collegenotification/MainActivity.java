@@ -20,12 +20,18 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.List;
 
 import javax.xml.transform.Source;
 //import com.google.firebase.firestore.CollectionReference;
@@ -49,8 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthStateListener;
-//    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-//    private final CollectionReference USERS_LIST = db.collection("USERS_LIST");
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,7 +190,31 @@ public class MainActivity extends AppCompatActivity {
                     // ProgressBar and overlay should be visible now, in case the processing of getting the document takes time.
                     progressBarSignup_Overlay.setVisibility(View.VISIBLE);
                     progressBarSignup.setVisibility(View.VISIBLE);
-                    // TODO: SIGNUP.
+
+                    db.collection("FAC_DETAILS")
+                            .whereEqualTo(empId.getText().toString(), null)
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()){
+                                        Log.d(TAG, "Query Successful!");
+                                        List<DocumentSnapshot> res = task.getResult().getDocuments();
+                                        boolean resEmpty = res.isEmpty();
+
+                                        if (resEmpty){
+                                            Snackbar.make(relativeLayout,
+                                                    "Sorry, no Account for the Employee Id. found", Snackbar.LENGTH_LONG)
+                                                    .show();
+                                        }
+                                        else {
+                                            DocumentSnapshot doc = res.get(0);
+                                            String email = doc.getId();
+                                            Signin(email);
+                                        }
+                                    }
+                                }
+                            });
                 }
             }
         });

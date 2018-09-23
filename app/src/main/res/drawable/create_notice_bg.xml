@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
+    <item android:state_pressed="true">
         <layer-list>
-            <item android:top="100dp">
+            <item>
                 <shape
                     android:dither="true"
-                    android:shape="oval" >
+                    android:shape="oval">
+                    <padding android:bottom="30dp"/>
                     <gradient android:type="radial"
-                        android:gradientRadius="20%"
+                        android:angle="270"
+                        android:gradientRadius="50%"
+                        android:endColor="#00000000"
+                        android:startColor="#000000" />
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@color/gray_bg"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item>
+                <shape
+                    android:dither="true"
+                    android:shape="oval">
+                    <padding android:bottom="30dp"/>
+                    <gradient android:type="radial"
+                        android:angle="270"
+                        android:gradientRadius="50%"
                         android:endColor="#00000000"
                         android:startColor="#000000" />
                 </shape>

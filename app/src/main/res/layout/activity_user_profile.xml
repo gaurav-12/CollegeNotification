@@ -7,22 +7,56 @@
     android:background="@color/colorAccent"
     tools:context=".Activity_UserProfile">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="@string/welcome"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button"
+    <View
+        android:id="@+id/divider"
         android:layout_width="260dp"
-        android:layout_height="260dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/create_notice_text"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/create_note_button"
+        android:layout_width="260dp"
+        android:layout_height="290dp"
+        android:layout_below="@+id/text"
         android:layout_centerInParent="true"
-        android:autoText="false"
+        android:layout_marginTop="20dp"
         android:background="@drawable/create_notice_bg"
-        android:text="Button" />
+        android:text="@string/create_notice"
+        android:textColor="@color/colorAccent"
+        android:textSize="160sp" />
 </RelativeLayout>

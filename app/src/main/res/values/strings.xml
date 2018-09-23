@@ -24,4 +24,6 @@
         - Special character (!@#$&amp;^+=\-*,._?)
     </string>
     <string name="welcome">Welcome to CNS</string>
+    <string name="create_notice">+</string>
+    <string name="create_notice_text">Tap on + below to create a notice</string>
 </resources>

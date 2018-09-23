@@ -25,9 +25,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Source;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import io.opencensus.internal.StringUtil;
 
 public class Activity_SignUp extends AppCompatActivity {
 
@@ -40,7 +46,7 @@ public class Activity_SignUp extends AppCompatActivity {
     private View progressBarSignup_Overlay;
 
     private FirebaseAuth mAuth;
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,7 +176,30 @@ public class Activity_SignUp extends AppCompatActivity {
                     progressBarSignup_Overlay.setVisibility(View.VISIBLE);
                     progressBarSignup.setVisibility(View.VISIBLE);
 
-
+                    db.collection("FAC_DETAILS")
+                            .document(Name.getText().toString())
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()){
+                                        DocumentSnapshot result = task.getResult();
+                                        if (result.contains("ACCOUNT_ACTIVE")){
+                                            Snackbar.make(relativeLayout,
+                                                    "Account for this Email already active, try Signing In",
+                                                    Snackbar.LENGTH_LONG).show();
+                                        }else {
+                                            if (result.contains(Name.getText().toString().toUpperCase())){
+                                                signupUser(Name.getText().toString());
+                                            }else {
+                                                Snackbar.make(relativeLayout,
+                                                        "Email and Name did not match, try rechecking fields",
+                                                        Snackbar.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    }
+                                }
+                            });
                 }
             }
         });
@@ -183,18 +212,37 @@ public class Activity_SignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Log.d(TAG, "Signup successful!");
+                            FirebaseUser user = task.getResult().getUser();
+                            UserProfileChangeRequest changeRequest = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(Name.getText().toString())
+                                    .build();
+                            updateProfile(user, changeRequest);
                         }
                     }
                 });
     }
 
     private void updateProfile(FirebaseUser user, UserProfileChangeRequest profileUpdates) {
+        final Map<String, Object> data = new HashMap<>();
+        data.put("ACCOUNT_ACTIVE", null);
+        data.put(empId.getText().toString(), null);
+
         user.updateProfile(profileUpdates)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             Log.d("USER UPDATE: ", "Profile updated!");
+                            db.collection("FAC_DETAILS").document(Email.getText().toString())
+                                    .update(data)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                finish();
+                                            }
+                                        }
+                                    });
                         }
                         else {
                             Log.d("PROFILE UPDATE ERROR: ", task.getException().getMessage());

@@ -26,4 +26,7 @@
     <string name="welcome">Welcome to CNS</string>
     <string name="create_notice">+</string>
     <string name="create_notice_text">Tap on + below to create a notice</string>
+    <string name="title">Title</string>
+    <string name="create_not_title">Create Notice</string>
+    <string name="description">Description</string>
 </resources>

@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class Activity_LaunchScreen extends AppCompatActivity {
 
-    private static final int SPLASH_DELAY_TIME = 10000;
+    private static final int SPLASH_DELAY_TIME = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
